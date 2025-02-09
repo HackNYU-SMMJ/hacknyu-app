@@ -1,18 +1,23 @@
 import { Button } from "@/components/ui/button";
+import { auth0 } from "@/lib/Auth0";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await auth0.getSession();
+
   return (
     <div className="min-h-screen">
       <nav className="p-4 flex items-center justify-between">
-        <span className="font-bold text-xl">SMMJ</span>
+        {/* <span className="font-bold text-xl">PennyWise</span> */}
+        <Image alt="logo"  src={"/pennywise.svg"} width={140} height={20}/>
         <div className="flex items-center gap-x-2">
           <Button variant="ghost" asChild>
             <Link href={"/signup"}>Sign-up</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href={"/login"}>Login</Link>
+            <a href="/auth/login?returnTo=/dashboard">Login</a>
           </Button>
         </div>
       </nav>

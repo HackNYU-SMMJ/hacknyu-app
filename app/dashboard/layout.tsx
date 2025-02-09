@@ -4,6 +4,7 @@ import "../globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import LogoutDropdown from "@/components/dashboard/logout-dropdown";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,13 +21,13 @@ export default function RootLayout({
       <AppSidebar />
       <main className="w-screen">
         <nav className="p-4 flex items-center justify-between border-b-[1px] border-[#acacac3f]">
-          <span className="font-bold text-xl">SMMJ</span>
+          <Image alt="logo" src={"/pennywise.svg"} width={140} height={20} />
           <div className="flex items-center gap-x-2">
             <LogoutDropdown />
           </div>
         </nav>
         <div className="px-4">
-            <SidebarTrigger />
+          <SidebarTrigger />
         </div>
         {children}
       </main>

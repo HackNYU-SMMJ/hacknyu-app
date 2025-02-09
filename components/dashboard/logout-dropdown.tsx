@@ -11,7 +11,7 @@ const LogoutDropdown = () => {
     return (
         <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Avatar className="h-9 w-9">
+        <Avatar className="h-9 w-9 cursor-pointer">
           <AvatarImage src="" alt="@shadcn" />
           <AvatarFallback>MK</AvatarFallback>
           <span className="sr-only">Toggle user menu</span>
@@ -22,7 +22,7 @@ const LogoutDropdown = () => {
         <DropdownMenuItem>Settings</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-            <div className="text-destructive">Logout</div>
+            <div className="text-destructive"><a href="/auth/logout?returnTo=">Log out</a></div>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
